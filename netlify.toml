@@ -1,0 +1,5 @@
+# Plain static HTML — no framework, package manager, or build step.
+# Only the Restaurante Original site is published; it is served at the site root.
+[build]
+  publish = "restaurante-original"
+  command = "echo 'Static site: no build step required'"
