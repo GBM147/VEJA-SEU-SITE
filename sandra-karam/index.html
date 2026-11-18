@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sandra Karam — Culinária Árabe</title>
+<meta name="description" content="Culinária árabe caseira para eventos, almoços e encomendas em São Paulo. Charutos, kibes, cordeiro, pastas e muito mais. Peça seu orçamento pelo WhatsApp.">
+<meta name="theme-color" content="#7a2e1d">
+<meta property="og:title" content="Sandra Karam — Culinária Árabe">
+<meta property="og:description" content="Banquete árabe feito à mão para o seu evento ou para a sua casa. Orçamento pelo WhatsApp.">
+<meta property="og:image" content="img/mesa.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbf6ee;--bg2:#f3e9d8;--ink:#2b1d15;--muted:#6f5d50;
+  --brand:#7a2e1d;--brand2:#a8431f;--gold:#c79a3b;--olive:#4d5a2e;
+  --card:#fffaf2;--line:#e6d7bf;--wa:#1fa855;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brand2);font-weight:700;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:.98rem;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;font-family:var(--sans)}
+.btn:active{transform:scale(.97)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 10px 24px -10px rgba(31,168,85,.7)}
+.btn-wa:hover{transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--bg)}
+.btn-brand{background:var(--brand);color:#fff}
+.btn-brand:hover{background:var(--brand2)}
+svg.i{width:20px;height:20px;flex:none}
+
+/* topbar */
+.top{background:var(--brand);color:#f6e6cf;font-size:.85rem;text-align:center;padding:9px 16px}
+.top b{color:#fff}
+header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo b{font-family:var(--serif);font-size:1.55rem;font-weight:700;color:var(--brand)}
+.logo span{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.nav ul{display:flex;gap:28px;list-style:none;font-weight:600;font-size:.92rem}
+.nav ul a:hover{color:var(--brand2)}
+.nav .btn{padding:11px 18px;font-size:.88rem}
+@media(max-width:820px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;padding:56px 0 72px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin:18px 0 20px}
+.hero h1 em{font-style:italic;color:var(--brand)}
+.hero p.lead{font-size:1.12rem;color:var(--muted);max-width:520px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 26px}
+.trust{display:flex;flex-wrap:wrap;gap:18px 26px;font-size:.9rem;color:var(--muted);font-weight:600}
+.trust span{display:flex;align-items:center;gap:8px}
+.trust svg{color:var(--olive)}
+.hero-img{position:relative}
+.hero-img .frame{border-radius:200px 200px 24px 24px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -30px rgba(74,30,15,.55);border:8px solid var(--card)}
+.hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+.badge{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 18px;box-shadow:0 18px 40px -20px rgba(43,29,21,.45);font-size:.88rem}
+.badge b{display:block;font-family:var(--serif);font-size:1.5rem;color:var(--brand);line-height:1}
+.badge.b1{left:-26px;bottom:60px}
+.badge.b2{right:-14px;top:40px}
+.stars{color:var(--gold);letter-spacing:2px}
+@media(max-width:880px){
+  .hero{padding:32px 0 56px}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .hero-img{max-width:420px;margin-inline:auto;width:100%}
+  .badge.b1{left:-6px}.badge.b2{right:-6px}
+}
+
+/* pattern divider */
+.orn{display:flex;justify-content:center;color:var(--gold);margin:0 auto}
+section{padding:88px 0;scroll-margin-top:68px}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
+.sec-head h2{font-size:clamp(2.1rem,4.5vw,3.2rem);margin:14px 0 14px}
+.sec-head p{color:var(--muted)}
+
+/* ocasiões */
+.occ{background:var(--bg2)}
+.occ-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.occ-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 22px;transition:transform .25s,box-shadow .25s}
+.occ-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(74,30,15,.4)}
+.occ-card .ic{width:48px;height:48px;border-radius:14px;background:var(--brand);color:#fff;display:grid;place-items:center;margin-bottom:16px}
+.occ-card h3{font-size:1.45rem;margin-bottom:6px}
+.occ-card p{color:var(--muted);font-size:.93rem}
+@media(max-width:900px){.occ-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.occ-grid{grid-template-columns:1fr}}
+
+/* cardápio */
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:30px;flex-wrap:wrap}
+.tab{padding:10px 20px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);font-weight:700;cursor:pointer;font-family:var(--sans);font-size:.92rem;color:var(--ink)}
+.tab.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dish{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:18px 18px 18px 20px;cursor:pointer;transition:border-color .2s,background .2s,transform .15s;text-align:left;font-family:var(--sans);color:var(--ink);width:100%}
+.dish:hover{border-color:var(--gold)}
+.dish:active{transform:scale(.99)}
+.dish .tx{flex:1}
+.dish h3{font-size:1.32rem;margin-bottom:4px}
+.dish p{font-size:.9rem;color:var(--muted);line-height:1.5}
+.dish .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--olive);background:#e7ead8;border-radius:6px;padding:2px 8px;margin-left:6px;vertical-align:middle;font-family:var(--sans)}
+.dish .add{flex:none;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--brand);color:var(--brand);display:grid;place-items:center;font-size:1.3rem;font-weight:600;transition:all .2s;margin-top:2px}
+.dish.sel{border-color:var(--brand);background:#fbeee3}
+.dish.sel .add{background:var(--brand);color:#fff;transform:rotate(45deg)}
+.menu-note{text-align:center;color:var(--muted);font-size:.92rem;margin-top:26px}
+@media(max-width:760px){.menu{grid-template-columns:1fr}}
+
+/* tray (seleção) */
+.tray{position:fixed;left:50%;bottom:16px;transform:translate(-50%,140%);z-index:50;background:var(--ink);color:var(--bg);border-radius:999px;padding:8px 8px 8px 22px;display:flex;align-items:center;gap:16px;box-shadow:0 20px 40px -12px rgba(0,0,0,.45);transition:transform .35s cubic-bezier(.2,.9,.3,1.2);width:min(520px,calc(100% - 32px))}
+.tray.show{transform:translate(-50%,0)}
+.tray .cnt{flex:1;font-size:.92rem;font-weight:600}
+.tray .cnt b{color:var(--gold);font-size:1.1rem}
+.tray .btn{padding:12px 18px;font-size:.9rem}
+
+/* como funciona */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding-top:58px}
+.step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:0;left:0;font-family:var(--serif);font-size:2.6rem;color:var(--gold);font-weight:700;line-height:1}
+.step h3{font-size:1.4rem;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.94rem}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* sobre */
+.about{background:var(--brand);color:#f6e6cf;position:relative;overflow:hidden}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;position:relative}
+.about .eyebrow{color:var(--gold)}
+.about h2{font-size:clamp(2.1rem,4.5vw,3.2rem);color:#fff;margin:14px 0 18px}
+.about p{margin-bottom:14px;color:#f1dcc2}
+.about .ph{border-radius:24px;overflow:hidden;border:6px solid rgba(255,255,255,.12);aspect-ratio:4/3}
+.about .ph img{width:100%;height:100%;object-fit:cover}
+.about .pat{position:absolute;inset:0;opacity:.07;pointer-events:none}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.pillars div{background:rgba(255,255,255,.08);border-radius:14px;padding:14px 16px;font-size:.92rem}
+.pillars b{display:block;color:#fff;font-family:var(--serif);font-size:1.2rem}
+@media(max-width:860px){.about .wrap{grid-template-columns:1fr;gap:36px}}
+
+/* depoimentos */
+.revs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+.rev q{display:block;font-family:var(--serif);font-size:1.32rem;line-height:1.35;quotes:none;margin:12px 0 18px}
+.rev .who{display:flex;align-items:center;gap:12px;font-size:.9rem}
+.rev .av{width:40px;height:40px;border-radius:50%;background:var(--bg2);color:var(--brand);display:grid;place-items:center;font-weight:700}
+.rev .who small{display:block;color:var(--muted)}
+.g-note{text-align:center;margin-top:24px;font-size:.9rem;color:var(--muted)}
+@media(max-width:760px){.revs{grid-template-columns:1fr}}
+
+/* orçamento */
+.quote{background:var(--bg2)}
+.quote .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.quote h2{font-size:clamp(2.1rem,4.5vw,3.2rem);margin:14px 0 16px}
+.quote .side p{color:var(--muted);margin-bottom:22px}
+.contact-list{list-style:none;display:grid;gap:14px}
+.contact-list li{display:flex;gap:12px;align-items:flex-start}
+.contact-list svg{color:var(--brand);margin-top:3px}
+form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-size:.82rem;font-weight:700;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-weight:500;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand)}
+.full{grid-column:1/-1}
+.picked{font-size:.88rem;background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;color:var(--muted)}
+.picked b{color:var(--ink)}
+form .btn{width:100%;padding:17px}
+.fine{font-size:.78rem;color:var(--muted);text-align:center}
+@media(max-width:860px){.quote .wrap{grid-template-columns:1fr}}
+@media(max-width:480px){form{grid-template-columns:1fr;padding:20px}}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-family:var(--serif);font-size:1.35rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--brand);font-size:1.6rem;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:10px}
+
+/* cta final + mapa */
+.final{text-align:center;padding:96px 0;background:radial-gradient(ellipse at top,#8e3a22,var(--brand) 60%);color:#fff}
+.final h2{font-size:clamp(2.3rem,5vw,3.8rem);margin:14px auto 16px;max-width:760px}
+.final p{color:#f1dcc2;max-width:520px;margin:0 auto 30px}
+.final .eyebrow{color:var(--gold)}
+.map{border:0;width:100%;height:320px;display:block;filter:saturate(.8)}
+footer{background:var(--ink);color:#cbb9a6;padding:36px 0;font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+footer b{font-family:var(--serif);font-size:1.3rem;color:#fff}
+
+/* whatsapp flutuante */
+.fab{position:fixed;right:18px;bottom:18px;z-index:45;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(31,168,85,.8);transition:opacity .3s,transform .3s}
+.fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ping 2.2s infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+.fab svg{width:30px;height:30px}
+body.tray-on .fab{opacity:0;pointer-events:none;transform:scale(.6)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.fab::after{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+  <symbol id="chk" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="orn" viewBox="0 0 120 20"><path fill="none" stroke="currentColor" stroke-width="1.3" d="M0 10h44M76 10h44M60 2l8 8-8 8-8-8 8-8Zm0 4 4 4-4 4-4-4 4-4Z"/></symbol>
+</svg>
+
+<div class="top">Agenda de <b>dezembro</b> aberta — festas de fim de ano têm datas limitadas. <a href="#orcamento" style="text-decoration:underline">Garanta a sua</a></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><b>Sandra Karam</b><span>Culinária Árabe</span></a>
+    <ul>
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#como">Como funciona</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#faq">Dúvidas</a></li>
+    </ul>
+    <a class="btn btn-wa" data-wa="Olá, Sandra! Vim pelo site e gostaria de um orçamento."><svg class="i"><use href="#wa"/></svg>Orçamento</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Feito à mão em São Paulo</span>
+      <h1>A mesa árabe que seus convidados <em>vão lembrar.</em></h1>
+      <p class="lead">Charutos, kibes, cordeiro assado lentamente e pastas tradicionais preparados pela Sandra para o seu aniversário, almoço em família, evento ou encomenda para casa.</p>
+      <div class="ctas">
+        <a class="btn btn-wa" data-wa="Olá, Sandra! Vim pelo site e gostaria de um orçamento para o meu evento."><svg class="i"><use href="#wa"/></svg>Pedir orçamento no WhatsApp</a>
+        <a class="btn btn-ghost" href="#cardapio">Montar meu cardápio</a>
+      </div>
+      <div class="trust">
+        <span><svg class="i"><use href="#chk"/></svg>Receitas de família</span>
+        <span><svg class="i"><use href="#chk"/></svg>Eventos de 10 a 70+ pessoas</span>
+        <span><svg class="i"><use href="#chk"/></svg>Encomendas para casa</span>
+      </div>
+    </div>
+    <div class="hero-img rv">
+      <div class="frame"><img src="img/mesa.jpg" alt="Mesa posta com pratos árabes preparados por Sandra Karam" width="408" height="306"></div>
+      <div class="badge b1"><span class="stars">★★★★★</span><b>Recomendado</b>no Google</div>
+      <div class="badge b2"><b>20+</b>pratos no cardápio</div>
+    </div>
+  </div>
+</section>
+
+<section class="occ" id="ocasioes">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Para cada ocasião</span>
+      <h2>Você recebe. A Sandra cozinha.</h2>
+      <p>Do almoço de domingo à festa com dezenas de convidados: comida farta, fresca e com o tempero de casa.</p>
+    </div>
+    <div class="occ-grid">
+      <div class="occ-card rv"><div class="ic"><svg class="i"><use href="#cal"/></svg></div><h3>Aniversários</h3><p>Um banquete completo para celebrar sem passar o dia na cozinha.</p></div>
+      <div class="occ-card rv"><div class="ic"><svg class="i"><use href="#cal"/></svg></div><h3>Almoços em família</h3><p>Pratos que reúnem todo mundo ao redor da mesa.</p></div>
+      <div class="occ-card rv"><div class="ic"><svg class="i"><use href="#cal"/></svg></div><h3>Eventos e empresas</h3><p>Cardápio montado para grupos grandes, com a mesma dedicação.</p></div>
+      <div class="occ-card rv"><div class="ic"><svg class="i"><use href="#cal"/></svg></div><h3>Natal e fim de ano</h3><p>Cordeiro, arroz marroquino e charutos para uma ceia diferente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cardapio">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Cardápio</span>
+      <h2>Monte o seu banquete</h2>
+      <p>Toque nos pratos que você quer e envie a seleção pelo WhatsApp. A Sandra responde com quantidades e valores para o seu número de convidados.</p>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-cat="principais">Pratos principais</button>
+      <button class="tab" data-cat="entradas">Entradas e pastas</button>
+    </div>
+    <div class="menu" id="menu"></div>
+    <p class="menu-note">Não achou o que procura? <a href="#" data-wa="Olá, Sandra! Gostaria de saber se você faz um prato que não está no cardápio." style="color:var(--brand);font-weight:700;text-decoration:underline">Pergunte pela Sandra</a></p>
+  </div>
+</section>
+
+<section class="occ" id="como">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Simples do primeiro oi até a mesa posta</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Escolha os pratos</h3><p>Monte sua seleção aqui no site ou peça uma sugestão da Sandra.</p></div>
+      <div class="step rv"><h3>Receba o orçamento</h3><p>Com base no número de pessoas, você recebe quantidades e valores pelo WhatsApp.</p></div>
+      <div class="step rv"><h3>Reserve a data</h3><p>Confirmado o pedido, sua data fica garantida na agenda.</p></div>
+      <div class="step rv"><h3>Aproveite</h3><p>Tudo preparado no dia, fresco, pronto para servir e ser elogiado.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <svg class="pat" aria-hidden="true"><defs><pattern id="p" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M30 0 60 30 30 60 0 30Z M30 12 48 30 30 48 12 30Z" fill="none" stroke="#fff" stroke-width="1.2"/></pattern></defs><rect width="100%" height="100%" fill="url(#p)"/></svg>
+  <div class="wrap">
+    <div class="ph rv"><img src="img/mesa.jpg" alt="Banquete árabe servido em evento" loading="lazy"></div>
+    <div class="rv">
+      <span class="eyebrow">Quem cozinha</span>
+      <h2>Tempero de casa, cuidado em cada detalhe</h2>
+      <p>A Sandra Karam prepara a culinária árabe que aprendeu em família: massas artesanais, cordeiro cozido lentamente, especiarias na medida certa.</p>
+      <p>Cada encomenda é feita para aquele dia e para aquelas pessoas. É por isso que os clientes voltam e indicam.</p>
+      <div class="pillars">
+        <div><b>Fresco</b>Preparado para a sua data</div>
+        <div><b>Farto</b>Ninguém sai com fome</div>
+        <div><b>Artesanal</b>Massas e recheios feitos à mão</div>
+        <div><b>Atencioso</b>Atendimento direto com a Sandra</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Avaliações do Google</span>
+      <h2>Quem provou, recomenda</h2>
+    </div>
+    <div class="revs">
+      <div class="rev rv"><q>Contratei a Sandra pro meu aniversário apenas confiando nas avaliações aqui do Google! E que grata surpresa!</q><div class="who"><span class="av">G</span><div><b>Giulia Zucchi</b><small>Aniversário</small></div></div></div>
+      <div class="rev rv"><q>Comida maravilhosa, muito bem preparada e com excelente qualidade. Foi um sucesso, todos os meus convidados adoraram e elogiaram muito os pratos!</q><div class="who"><span class="av">A</span><div><b>Amanda Melleiro</b><small>Evento em casa</small></div></div></div>
+      <div class="rev rv"><q>Fizemos um almoço em casa e todos elogiaram a comida! Tudo muito fresco e saboroso. A Sandra foi super atenciosa e cuidadosa em todos os detalhes.</q><div class="who"><span class="av">L</span><div><b>Leonardo Plana</b><small>Almoço em família</small></div></div></div>
+      <div class="rev rv"><q>Fui em um evento com mais de 70 pessoas feito por ela que foi um espetáculo e agora sempre encomendo para casa.</q><div class="who"><span class="av">C</span><div><b>Caio Fernando</b><small>Local Guide · Evento 70+ pessoas</small></div></div></div>
+    </div>
+    <p class="g-note">Avaliações publicadas no perfil da Sandra Karam Culinária Árabe no Google.</p>
+  </div>
+</section>
+
+<section class="quote" id="orcamento">
+  <div class="wrap">
+    <div class="side rv">
+      <span class="eyebrow">Orçamento sem compromisso</span>
+      <h2>Conte como vai ser o seu evento</h2>
+      <p>Preencha em 30 segundos. A mensagem chega pronta no WhatsApp da Sandra, com os pratos que você escolheu.</p>
+      <ul class="contact-list">
+        <li><svg class="i"><use href="#wa"/></svg><div><b>(11) 98388-2943</b><br><small>WhatsApp</small></div></li>
+        <li><svg class="i"><use href="#pin"/></svg><div><b>R. São José, 261 — Alto da Boa Vista</b><br><small>São Paulo · SP · 04739-000</small></div></li>
+        <li><svg class="i"><use href="#cal"/></svg><div><b>Reserve com antecedência</b><br><small>Datas de fim de semana e dezembro saem rápido</small></div></li>
+      </ul>
+    </div>
+    <form id="f" class="rv">
+      <label>Seu nome<input name="nome" required autocomplete="name"></label>
+      <label>Data do evento<input name="data" type="date"></label>
+      <label>Nº de pessoas<input name="pessoas" type="number" min="1" inputmode="numeric" placeholder="Ex.: 20"></label>
+      <label>Tipo<select name="tipo"><option>Aniversário</option><option>Almoço/jantar em família</option><option>Evento/empresa</option><option>Natal/Ano Novo</option><option>Encomenda para casa</option></select></label>
+      <label class="full">Bairro de entrega<input name="bairro" placeholder="Ex.: Santo Amaro"></label>
+      <div class="full picked" id="picked">Nenhum prato selecionado ainda — <a href="#cardapio" style="color:var(--brand);font-weight:700">escolher no cardápio</a> ou deixe a Sandra sugerir.</div>
+      <label class="full">Observações<textarea name="obs" rows="3" placeholder="Restrições, preferências, horário..."></textarea></label>
+      <div class="full"><button class="btn btn-wa" type="submit"><svg class="i"><use href="#wa"/></svg>Enviar pedido pelo WhatsApp</button></div>
+      <p class="full fine">Resposta direta com a Sandra. Sem compromisso.</p>
+    </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="eyebrow">Dúvidas</span><h2>Perguntas frequentes</h2></div>
+    <div class="faq rv">
+      <details><summary>Qual a quantidade mínima de pedido?</summary><p>Atendemos desde encomendas para a família até eventos com mais de 70 pessoas. Fale com a Sandra e ela indica a melhor quantidade para o seu caso.</p></details>
+      <details><summary>Com quanto tempo de antecedência devo pedir?</summary><p>O ideal é reservar com alguns dias de antecedência. Em dezembro e nos fins de semana a agenda fecha rápido, então quanto antes, melhor.</p></details>
+      <details><summary>Vocês entregam?</summary><p>Consulte pelo WhatsApp informando o seu bairro. A cozinha fica no Alto da Boa Vista, Zona Sul de São Paulo.</p></details>
+      <details><summary>Tem opções vegetarianas?</summary><p>Sim! Falafel, mjadra com lentilha, mssaka'a, kibe de batata com nozes, tabule, homus, babaganoush e outras pastas.</p></details>
+      <details><summary>Posso pedir um prato que não está no cardápio?</summary><p>Pergunte! A Sandra avalia pedidos especiais sempre que possível.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow">Sua próxima mesa</span>
+    <h2>Deixe a cozinha com a Sandra e aproveite seus convidados.</h2>
+    <p>Mande uma mensagem agora e receba seu orçamento personalizado.</p>
+    <a class="btn btn-wa" data-wa="Olá, Sandra! Vim pelo site e gostaria de um orçamento."><svg class="i"><use href="#wa"/></svg>Chamar no WhatsApp</a>
+  </div>
+</section>
+
+<iframe class="map" title="Localização Sandra Karam Culinária Árabe" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Sandra+Karam+Culin%C3%A1ria+%C3%81rabe,+R.+S%C3%A3o+Jos%C3%A9,+261,+S%C3%A3o+Paulo&output=embed"></iframe>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Sandra Karam</b><br>Culinária Árabe · R. São José, 261 — Alto da Boa Vista, São Paulo</div>
+    <div>© <span id="y"></span> · <a href="#" style="text-decoration:underline">Voltar ao topo ↑</a></div>
+  </div>
+</footer>
+
+<div class="tray" id="tray"><span class="cnt"><b id="n">0</b> <span id="pl">pratos</span> no seu banquete</span><a class="btn btn-wa" href="#orcamento"><svg class="i"><use href="#wa"/></svg>Pedir orçamento</a></div>
+<a class="fab" aria-label="Falar no WhatsApp" data-wa="Olá, Sandra! Vim pelo site e gostaria de um orçamento."><svg><use href="#wa"/></svg></a>
+
+<script>
+const WA='5511983882943';
+const waLink=m=>`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+document.querySelectorAll('[data-wa]').forEach(a=>{a.href=waLink(a.dataset.wa);a.target='_blank';a.rel='noopener'});
+document.getElementById('y').textContent=new Date().getFullYear();
+
+const M={
+ principais:[
+  ['Abobrinha Recheada','Abobrinha recheada com carne e arroz, cozida com temperos árabes.'],
+  ['Arroz com Cordeiro','Arroz com lascas de cordeiro, snouba e pistache. Cozido lentamente com temperos árabes.','destaque'],
+  ['Arroz Marroquino','Arroz aromático, preparado com especiarias árabes.'],
+  ['Arroz Mjadra com Lentilha','Mistura nutritiva de arroz, lentilhas e cebola caramelizada.','vegetariano'],
+  ['Arroz Sírio','O clássico arroz árabe para acompanhar qualquer banquete.'],
+  ['Charuto de Folha de Repolho','Repolho delicadamente recheado com carne e arroz, cozido com toque cítrico.'],
+  ['Charuto de Folha de Uva','Folhas de uva recheadas com arroz e carne, cozidas com toque cítrico.','favorito'],
+  ['Chich Barak','Massa artesanal assada, recheada com carne e especiarias, finalizada na coalhada.'],
+  ['Pernil de Cordeiro','Macio, suculento e assado lentamente com temperos árabes tradicionais.','destaque'],
+  ['Kafta ao Molho','Carne bovina temperada e assada, servida com molho de tomate e um toque de canela.'],
+  ['Kibe de Bandeja Assado','Clássico assado no forno, recheado com carne, snouba (pinoles) e coalhada.'],
+  ['Kibe de Batata com Nozes e Castanha','Leve e aromático, com recheio crocante de nozes, castanha-do-pará e especiarias.','vegetariano'],
+  ['Mini Kibe','Pequenos e crocantes por fora, macios e saborosos por dentro.'],
+  ['Falafel','Bolinho crocante de grão-de-bico, com ervas e especiarias marcantes.','vegetariano'],
+  ["Mssaka'a",'Berinjela com grão-de-bico e tomates, temperada com especiarias.','vegetariano']
+ ],
+ entradas:[
+  ['Babaganoush','Pasta de berinjela defumada com tahine e limão.','vegetariano'],
+  ['Coalhada Seca','Cremosa, com azeite e hortelã.','vegetariano'],
+  ['Homus','Pasta de grão-de-bico com tahine, limão e azeite.','vegetariano'],
+  ['Tabule','Salada fresca de trigo, salsinha, hortelã, tomate e limão.','vegetariano'],
+  ['Caponata de Berinjela','Berinjela agridoce com legumes e especiarias.','vegetariano'],
+  ['Esfiha de Carne','Massa macia com recheio de carne temperada.'],
+  ['Esfiha de Verdura','Massa macia com recheio de verduras e especiarias.','vegetariano'],
+  ['Fattoush','Salada crocante com pão árabe tostado e sumac.','vegetariano']
+ ]
+};
+const sel=new Set();
+const menu=document.getElementById('menu');
+function render(cat){
+  menu.innerHTML=M[cat].map(([n,d,t])=>`<button type="button" class="dish${sel.has(n)?' sel':''}" data-n="${n}" aria-pressed="${sel.has(n)}"><span class="tx"><h3>${n}${t?`<span class="tag">${t}</span>`:''}</h3><p>${d}</p></span><span class="add">+</span></button>`).join('');
+}
+render('principais');
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));render(b.dataset.cat)});
+menu.onclick=e=>{const d=e.target.closest('.dish');if(!d)return;const n=d.dataset.n;sel.has(n)?sel.delete(n):sel.add(n);d.classList.toggle('sel');d.setAttribute('aria-pressed',sel.has(n));upd()};
+function upd(){
+  document.getElementById('n').textContent=sel.size;document.getElementById("pl").textContent=sel.size===1?"prato":"pratos";
+  const on=sel.size>0;document.getElementById('tray').classList.toggle('show',on);document.body.classList.toggle('tray-on',on);
+  document.getElementById('picked').innerHTML=on?`<b>Pratos escolhidos (${sel.size}):</b> ${[...sel].join(', ')}`:'Nenhum prato selecionado ainda — <a href="#cardapio" style="color:var(--brand);font-weight:700">escolher no cardápio</a> ou deixe a Sandra sugerir.';
+}
+// esconde a barra quando o formulário está visível
+new IntersectionObserver(([e])=>{if(sel.size)document.getElementById('tray').classList.toggle('show',!e.isIntersecting)},{threshold:.2}).observe(document.getElementById('f'));
+
+document.getElementById('f').onsubmit=e=>{
+  e.preventDefault();const f=new FormData(e.target);
+  const dt=f.get('data')?new Date(f.get('data')+'T12:00').toLocaleDateString('pt-BR'):'a definir';
+  let m=`Olá, Sandra! Vim pelo site e gostaria de um orçamento.\n\n*Nome:* ${f.get('nome')}\n*Ocasião:* ${f.get('tipo')}\n*Data:* ${dt}\n*Pessoas:* ${f.get('pessoas')||'a definir'}\n*Bairro:* ${f.get('bairro')||'-'}`;
+  m+=sel.size?`\n\n*Pratos escolhidos:*\n${[...sel].map(x=>'• '+x).join('\n')}`:'\n\nGostaria de uma sugestão de cardápio.';
+  if(f.get('obs'))m+=`\n\n*Obs.:* ${f.get('obs')}`;
+  window.open(waLink(m),'_blank');
+};
+
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
